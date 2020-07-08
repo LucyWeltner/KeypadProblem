@@ -8,39 +8,31 @@ function keypadTime(keypad, code) {
 		let distance = nextKeyIndex - startingPlace
 		if (startingPlace === nextKeyIndex) {
 			totalTime += 0
-			console.log("adding 0")
 		}
 		else if (startingPlace === 5 || nextKeyIndex === 5) {
 			totalTime += 1
-			console.log("adding 1 in 2")
 		}
 		else if (startingPlace%3 === 1) {
 			if (distance === 1 || Math.abs(distance) === 3) {
-				console.log("adding 1 in 3")
 				totalTime += 1
 			}
 			else {
-				console.log("adding 2 in 3")
 				totalTime +=2
 			}
 		}
 		else if (startingPlace%3 === 0) {
 			if (distance === -1 || Math.abs(distance) === 3) {
-				console.log("adding 1 in 4")
 				totalTime += 1
 			}
 			else {
-				console.log("adding 2 in 4")
 				totalTime += 2
 			}
 		}
 		else {
 			if (Math.abs(distance) > 0 && Math.abs(distance) < 5) {
-				console.log("adding 1 in 5")
 				totalTime += 1
 			}
 			else {
-				console.log("adding 2 in 5")
 				totalTime += 2
 			}
 		}
@@ -48,8 +40,3 @@ function keypadTime(keypad, code) {
 	}
 	return totalTime
 }
-
-
-console.log(keypadTime("123456798", "225791"))
-
-console.log(keypadTime("153426798", "59422"))
